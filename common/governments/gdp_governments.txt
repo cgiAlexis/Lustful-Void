@@ -1,0 +1,13 @@
+gov_beast_enclave = {
+	ruler_title = RT_Beast_Lord
+	
+	should_force_rename = yes
+
+	possible = {
+		has_valid_civic = civic_space_beasts
+	}
+
+	weight = {
+		base = 100000
+	}
+}

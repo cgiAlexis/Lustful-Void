@@ -1,0 +1,103 @@
+##################
+### TECH COSTS ###
+##################
+#If you change any of these, use replace in files so the values are the same across all files
+
+@tier1cost1 = 500
+@tier1cost2 = 640
+@tier1cost3 = 780
+
+@tier2cost1 = 1000
+@tier2cost2 = 1300
+@tier2cost3 = 1600
+
+@tier3cost1 = 2000
+@tier3cost2 = 2500
+@tier3cost3 = 3000
+
+@tier4cost1 = 4000
+@tier4cost2 = 5000
+@tier4cost3 = 6000
+
+@tier5cost1 = 10000
+@tier5cost2 = 12000
+@tier5cost3 = 14000
+
+####################
+### TECH WEIGHTS ###
+####################
+
+@tier1weight1 = 100
+@tier1weight2 = 95
+@tier1weight3 = 90
+
+@tier2weight1 = 85
+@tier2weight2 = 75
+@tier2weight3 = 70
+
+@tier3weight1 = 65
+@tier3weight2 = 60
+@tier3weight3 = 50
+
+@tier4weight1 = 45
+@tier4weight2 = 40
+@tier4weight3 = 35
+
+@tier5weight1 = 30
+@tier5weight2 = 25
+@tier5weight3 = 20
+
+
+
+tech_beast_friendship = {
+	area = society
+	cost = @tier3cost3
+	tier = 3
+	category = {biology}
+	weight =@tier1weight1
+	modifier = {
+		pop_happiness = 0.1
+		army_damage_mult = 0.2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			always = yes
+		}
+	}
+}
+
+tech_beast_military_organization = {
+	area = society
+	cost = @tier4cost2
+	tier = 4
+	category = {military_theory}
+	is_rare = yes
+	prerequisites = { "tech_beast_friendship" }
+
+	prereqfor_desc = {
+		ship = {
+			title = ""
+			desc = "additional_beast_armies"
+		}
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0
+			NOT = {has_country_flag = "beast_armies"}
+		}
+
+		modifier = {
+			factor = 1.5
+			has_trait = "leader_trait_maniacal"
+		}
+
+		modifier = {
+			factor = 2
+			has_trait = "leader_beast_sci"
+		}
+	}
+}

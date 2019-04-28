@@ -1,0 +1,23 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_beastrandom.1"
+		texturefile = "gfx/event_pictures/beastrandom.1.picture.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+
+	spriteType = {
+		name = "GFX_beastrandom.2"
+		texturefile = "gfx/event_pictures/beastrandom.2.picture.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+
+	spriteType = {
+		name = "GFX_beastrandom.3"
+		texturefile = "gfx/event_pictures/beastrandom.3.picture.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes	
+	}
+}

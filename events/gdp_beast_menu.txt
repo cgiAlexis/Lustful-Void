@@ -1,0 +1,404 @@
+namespace = beastmenu
+
+country_event = {
+	id = beastmenu.000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = "beast_diplomacy_engaged" }
+		FROM = { has_valid_civic = civic_space_beasts }
+	}
+	immediate = {
+		FROM = { save_event_target_as = beasts }
+		country_event = { id = beastmenu.001 }
+		set_country_flag = "beast_diplomacy_engaged"
+		
+	}
+}
+
+
+
+country_event = {
+	id = beastmenu.001
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	}
+	title = beastmenu.001.title
+	desc = beastmenu.001.desc
+
+
+	option = { #give pop
+		name = beastmenu.001.a
+		country_event = {id = beastmenu.002}
+
+		allow = {
+			NOT = { has_modifier = gifted_pop }
+		}
+		
+	}
+
+	option = { #give leader
+		name = beastmenu.001.b
+		country_event = { id = beastmenu.003 }
+		allow = {
+			custom_tooltip = {
+				fail_text = beastmenu.001.b.gender
+				any_owned_leader = {
+					gender = female
+				}
+			}
+
+			custom_tooltip = {
+				fail_text = beastmenu.001.b.recentgift
+				NOT = { has_modifier = gifted_leader }
+			}
+		}
+	}
+
+	option = { #ask for leader
+		name = beastmenu.001.c
+		country_event = {id = beastmenu.004}
+		allow = {
+			custom_tooltip = {
+				fail_text = beastmenu.001.c.opinion
+				event_target:beasts = {
+					trust = { 
+						who = root
+						value > 49 
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = beastmenu.001.c.alreadyrecruited
+				NOT = {
+					any_owned_leader = { 
+						OR = {
+							has_trait = leader_beast_gen
+							has_trait = leader_beast_adm
+							has_trait = leader_beast_sci
+						}
+					}
+				}
+			}
+		}
+		set_country_flag = "has_beast_leader"
+	}
+
+	option = { #we don't want anything after all
+		name = beastmenu.001.d
+		default_hide_option = yes
+		remove_country_flag = "beast_diplomacy_engaged"
+	}
+}
+
+country_event = {
+	id = beastmenu.002
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	force_open = yes
+	desc = beastmenu.002.desc
+	title = beastmenu.001.title
+	picture_event_data = {
+		room = pop_sacrifice_room
+	}
+
+	option = { #donate own species
+		name = beastmenu.002.a
+
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+
+		random_owned_pop = {
+			limit = {
+				is_exact_same_species =root
+			}
+			kill_pop = yes
+		}
+
+		add_modifier = { 
+			modifier = gifted_pop
+			days = 1800
+		}
+
+		event_target:beasts = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+
+		country_event = {id = beastmenu.005}
+	}
+
+	option = { #donate xeno species
+		name = beastmenu.002.b
+
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+			any_owned_pop = {
+				NOT = { is_exact_same_species = root }
+			}
+		}
+
+		random_owned_pop = {
+			limit = {
+				NOT = { is_exact_same_species = root }
+			}
+			kill_pop = yes
+		}
+
+		add_modifier = { 
+			modifier = gifted_pop
+			days = 1800
+		}
+		event_target:beasts = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+		country_event = {id = beastmenu.005}
+	}
+
+	option = { #donate any species
+		name = beastmenu.002.c
+		trigger = {
+			root = {
+				NOT = {
+					OR = {
+						has_ethic = ethic_xenophobe
+						has_ethic = ethic_fanatic_xenophobe
+					}
+				}
+			}
+		}
+
+		random_owned_pop = {
+			kill_pop = yes
+		}
+
+		add_modifier = { 
+			modifier = gifted_pop
+			days = 1800
+		}
+		event_target:beasts = {
+			add_trust = {
+				who = root
+				amount = 5
+			}
+		}
+		country_event = {id = beastmenu.005}
+	}
+
+	option = { #abort
+		name = beastmenu.002.d
+		default_hide_option = yes 
+	}
+
+	after = {
+		remove_country_flag = "beast_diplomacy_engaged"
+	}
+}
+
+country_event = { #leader sacrifice
+	id = beastmenu.003
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	force_open = yes
+	desc = beastmenu.003.desc
+	title = beastmenu.001.title
+	picture_event_data = {
+		room = leader_sacrifice_room
+	}
+
+	option = {
+		name = beastmenu.003.a
+		remove_country_flag = "beast_diplomacy_engaged"
+		country_event = {id = beastmenu.005}
+		hidden_effect = {
+			random_owned_leader = {
+				limit = {
+					gender = female
+					NOT = {
+						OR = {
+							has_trait = leader_beast_lord_gen
+							has_trait = leader_beast_lord_sci
+							has_trait = leader_beast_lord_gov
+							has_trait = leader_beast_lord_adm
+						}
+					}
+				}
+				kill_leader = {show_notification = yes}
+			}
+		}
+
+		add_modifier = { 
+			modifier = gifted_leader
+			days = 3600
+		}
+
+		event_target:beasts = {
+			add_trust = {
+				who = root
+				amount = 10
+			}
+		}
+	}
+
+	option = {
+		name = beastmenu.003.b
+		default_hide_option = yes
+		remove_country_flag = "beast_diplomacy_engaged"
+	}
+}
+
+country_event = { #recruit leader
+	id = beastmenu.004
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	force_open = yes
+	desc = beastmenu.004.desc
+	title = beastmenu.001.title
+	picture_event_data = {
+		room = leader_recruiting_room
+	}	
+
+	option = { #general
+		name = beastmenu.004.a
+		remove_country_flag = "beast_diplomacy_engaged"
+		create_leader = {
+			name = random
+			species = event_target:beast_species
+			type = general
+			skill = 5
+			set_age = 30
+			traits = {
+				trait = leader_beast_gen
+			}
+			event_leader = yes
+		}
+		country_event = {id = beastmenu.005}
+	}
+
+	option = { #admiral
+		name = beastmenu.004.b
+		remove_country_flag = "beast_diplomacy_engaged"
+		create_leader = {
+			name = random
+			species = event_target:beast_species
+			type = admiral
+			skill = 5
+			set_age = 30
+			traits = {
+				trait = leader_beast_adm
+			}
+			event_leader = yes
+		}
+		country_event = {id = beastmenu.005}
+
+	}
+
+	option = { #scientist
+		name = beastmenu.004.c
+		remove_country_flag = "beast_diplomacy_engaged"
+		create_leader = {
+			name = random
+			species = event_target:beast_species
+			type = scientist
+			skill = 5
+			set_age = 30
+			traits = {
+				trait = leader_beast_sci
+			}
+			event_leader = yes
+		}
+		country_event = {id = beastmenu.005}
+	}
+}
+
+
+country_event = {
+	id = beastmenu.005
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				event_target:beast_lord = {#trust check
+					trust = { 
+						who = root
+						value > 99 
+					}
+				}
+				NOT = { has_country_flag = "beast_max_relations"}
+			}
+			set_country_flag = "beast_max_relations"
+		}
+		if = {
+			limit = {
+				event_target:beast_lord = {#trust check
+					trust = { 
+						who = root
+						value > 89
+					}
+				}
+			}
+			country_event = {id = beastreward.004 days = 20}
+		}
+		if = {
+			limit = {
+				event_target:beast_lord = {#trust check
+					trust = { 
+						who = root
+						value > 69 
+					}
+				}
+			}
+			country_event = {id = beastreward.003 days = 20}
+		}
+		if = {
+			limit = {
+				event_target:beast_lord = {#trust check
+					trust = { 
+						who = root
+						value > 39 
+					}
+				}
+			}
+			country_event = {id = beastreward.002 days = 20}
+		}
+		if = {
+			limit = {
+				event_target:beast_lord = {#trust check
+					trust = { 
+						who = root
+						value > 24 
+					}
+				}
+			}
+			country_event = {id = beastreward.001 days = 20}
+		}
+	}
+}

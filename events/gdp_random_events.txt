@@ -1,0 +1,560 @@
+######################
+#Beast Arena 8 events mainly story
+#	some influence and hapiness (10% for 60 days)  on planet
+#
+#
+#beast relationships beastrandom.1
+#
+#beast friendship beastrandom.2
+#
+#beast pets beastrandom.3
+#
+#beast spawn pop beastrandom.4
+#
+#beast pop rape beastrandom.5
+#
+#beast pop normal sex beastrandom.6
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+@tier1materialreward = 6
+@tier1materialmin = 100
+@tier1materialmax = 500
+@tier2materialreward = 12
+@tier2materialmin = 150
+@tier2materialmax = 1000
+@tier3materialreward = 18
+@tier3materialmin = 250
+@tier3materialmax = 1500
+@tier4materialreward = 24
+@tier4materialmin = 350
+@tier4materialmax = 2000
+
+@tier1influencereward = 6
+@tier1influencemin = 40
+@tier1influencemax = 100
+@tier2influencereward = 12
+@tier2influencemin = 80
+@tier2influencemax = 175
+@tier3influencereward = 18
+@tier3influencemin = 125
+@tier3influencemax = 250
+@tier4influencereward = 24
+@tier4influencemin = 150
+@tier4influencemax = 300
+
+@tier1researchreward = 6
+@tier1researchmin = 60
+@tier1researchmax = 150
+@tier2researchreward = 12
+@tier2researchmin = 90
+@tier2researchmax = 250
+@tier3researchreward = 18
+@tier3researchmin = 120
+@tier3researchmax = 350
+@tier4researchreward = 24
+@tier4researchmin = 150
+@tier4researchmax = 500
+
+
+
+namespace = beastarena
+
+planet_event = {
+	id = beastarena.1
+	title = "beastarena.1.title"
+	desc = "beastarena.1.desc"
+	diplomatic = yes
+	picture_event_data = {
+		room = beastarena1_room
+	}
+
+	trigger = {
+		has_building = building_beast_arena
+	}
+
+	mean_time_to_happen = {
+		years = 20
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.2 days = 1}
+
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+
+}
+
+planet_event = {
+	id = beastarena.2
+	title = "beastarena.1.title"
+	desc = "beastarena.2.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena2_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.3 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.3
+	title = "beastarena.1.title"
+	desc = "beastarena.3.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena3_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.4 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.4
+	title = "beastarena.1.title"
+	desc = "beastarena.4.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena4_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.5 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.5
+	title = "beastarena.1.title"
+	desc = "beastarena.5.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena5_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.6 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.6
+	title = "beastarena.1.title"
+	desc = "beastarena.6.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena6_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.7 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.7
+	title = "beastarena.1.title"
+	desc = "beastarena.7.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena7_room
+	}
+
+	option = { #I want to see more
+		name = beastarena_more
+		planet_event = { id = beastarena.8 days = 1}
+	}
+
+	option = { #Enough of this
+		name = beastarena_enough
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier1influencereward
+				min = @tier1influencemin
+				max = @tier1influencemax
+			}
+		}
+	}
+}
+
+planet_event = {
+	id = beastarena.8
+	title = "beastarena.1.title"
+	desc = "beastarena.8.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	picture_event_data = {
+		room = beastarena8_room
+	}
+
+	option = { #truly amazing
+		name = beastarena.8.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = influence
+				value = @tier2influencereward
+				min = @tier2influencemin
+				max = @tier2influencemax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+namespace = beastrandom
+
+country_event = { #beast relationships (some society)
+	id = beastrandom.1
+	title = beastrandom.1.title
+	desc = beastrandom.1.desc
+	picture = GFX_beastrandom.1
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	trigger = {
+		AND = {
+			has_global_flag = has_beast_enclave
+			event_target:beast_lord = {#trust check
+				trust = { 
+					who = root
+					value > 40 
+				}
+			}
+		}
+	}
+
+	option = { #how intersting
+		name = beastrandom.1.a
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+
+	option = { #support this
+		name = beastrandom.1.b
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = -5
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+
+	}
+
+	option = { #ban this
+		name = beastrandom.1.c
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = @tier1influencereward
+			min = @tier1influencemin
+			max = @tier1influencemax
+		}
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = @tier2materialreward
+			min = @tier2materialmin
+			max = @tier2materialmax
+		}
+
+	}
+
+}
+
+country_event = { #beast prostitution (some energy)
+	id = beastrandom.2
+	title = beastrandom.2.title
+	desc = beastrandom.2.desc
+	picture = GFX_beastrandom.2
+	mean_time_to_happen = {
+		years = 2
+	}
+
+	trigger = {
+		AND = {
+			has_global_flag = has_beast_enclave
+			event_target:beast_lord = {#trust check
+				trust = { 
+					who = root
+					value > 35 
+				}
+			}
+		}
+	}
+	option = { #normal
+		name = beastrandom.2.a
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier1materialreward
+			min = @tier1materialmin
+			max = @tier1materialmax
+		}
+	}
+	option = { #materialist additional tax
+		name = beastrandom.2.b
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = energy
+			value = @tier3materialreward
+			min = @tier3materialmin
+			max = @tier3materialmax
+		}
+	}
+
+}
+
+country_event = { #beast kept as pets (some society)
+	id = beastrandom.3
+	title = beastrandom.3.title
+	desc = beastrandom.3.desc
+	picture = GFX_beastrandom.3
+	mean_time_to_happen = {
+		years = 5
+	}
+
+	trigger = {
+		AND = {
+			has_global_flag = has_beast_enclave
+			event_target:beast_lord = {#trust check
+				trust = { 
+					who = root
+					value > 75 
+				}
+			}
+		}
+	}
+
+	option = { #normal 
+		name = beastrandom.3.a
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier2researchreward
+			min = @tier2researchmin
+			max = @tier2researchmax
+		}
+	}
+
+	option = { #authoritarian more society
+		name = beastrandom.3.b
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+				}
+			}
+		}
+
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+
+	option = { #egalitarian more society less influence
+		name = beastrandom.3.c
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_fanatic_egalitarian
+				}
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = -10
+		}
+	}
+
+}
+
+#planet_event = { #beast spawn pop (spawn beast pop on random world)
+#	id = beastrandom.4
+#	title = beastrandom.4.title
+#	desc = beastrandom.4.desc
+#	mean_time_to_happen = {
+#		years = 20
+#	}
+#	trigger = {
+#		AND = {
+#			has_global_flag = has_beast_enclave
+#			has_country_flag = "beast_max_relations"
+#		}
+#	}
+#
+#	option = { #agree that beasts come
+#		name = beastrandom.4.a
+#	}
+#
+#	option = { #send them away
+#		name = beastrandom.4.b
+#	}
+#}
+
+#country_event = { #beast pop rapes normal pop (bad hapiness mod)
+#	id = beastrandom.5
+#	title = beastrandom.5.title
+#	desc = beastrandom.5.desc
+#	mean_time_to_happen = {
+#		years = 3
+#	}
+#	trigger = {
+#		any_owned_planet = {
+#			any_pop = { #check if there is a beast
+#
+#			}
+#			any_pop = { #check if there is non beast pop
+#
+#			}
+#		}
+#	}
+#}
+#
+#country_event = { #beast pop orgy with normal pop (good hapiness mod + society)
+#	id = beastrandom.6
+#	title = beastrandom.6.title
+#	desc = beastrandom.6.desc
+#	mean_time_to_happen = {
+#		years = 15
+#	}
+#}

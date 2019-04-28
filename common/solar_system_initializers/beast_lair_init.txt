@@ -1,0 +1,217 @@
+beast_lair = {
+    name = "The Hideout"
+    class = "sc_f"
+    asteroids_distance = 125
+
+    planet = {
+        class = star
+        orbit_distance = 0
+    }
+
+    planet = {
+        name = "Mortus"
+        class = "pc_molten"
+        orbit_distance = 51
+        orbit_angle = 83
+        size = 14
+        has_ring = no
+
+        init_effect = {
+            orbital_deposit_tile = {
+                clear_deposits = yes
+                add_deposit = d_enormous3_mineral_deposit
+            }
+        }
+        
+
+
+    }
+
+    planet = {
+        name = "Valkyr"
+        class = "pc_molten"
+        orbit_distance = 16
+        orbit_angle = 186
+        size = 16
+        has_ring = no
+        init_effect = {
+         orbital_deposit_tile = {
+		  	clear_deposits = yes
+		  	add_deposit = d_enormous3_mineral_deposit
+		  }
+        }
+
+    }
+
+    planet = {
+        name = "Beast Lair"
+        class = "pc_gaia"
+        orbit_distance = 34
+        orbit_angle = 266
+        size = 25
+        has_ring = no
+        tile_blockers = none
+
+       init_effect = {
+         while = {
+            count = 8
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_ancient_factory"
+                set_deposit = d_mineral_deposit
+            } 
+        }
+
+        while = {
+            count = 7
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_dark_matter_power_plant"
+                set_deposit = d_energy_deposit
+            }
+        }
+
+        while = {
+            count = 5
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_agri_processing_complex"
+                set_deposit = d_farmland_deposit
+            }
+        }
+       }
+
+        moon = {
+            name = "Guardian"
+            class = "pc_barren"
+            orbit_distance = 10
+            orbit_angle = 180
+            size = 5
+            has_ring = no
+
+        }
+    }
+
+    planet = {
+        name = "Beast Elysium"
+        class = "pc_gaia"
+        orbit_distance = 26
+        orbit_angle = 86
+        size = 25
+        has_ring = no
+        tile_blockers = none
+
+        init_effect = {
+        while = {
+            count = 6
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_ancient_archives"
+                set_deposit = d_physics_deposit
+            }
+        }
+        while = {
+            count = 6
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_ancient_archives"
+                set_deposit = d_society_deposit
+            }
+        }
+        while = {
+            count = 6
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_ancient_archives"
+                set_deposit = d_engineering_deposit
+            }
+        }
+
+        while = {
+            count = 3
+            random_tile = {
+                limit = { has_building = no has_blocker = no }
+                set_building = "building_dark_matter_power_plant"
+                set_deposit = d_energy_deposit
+            }
+        }
+        }
+
+
+        moon = {
+            name = "Minotaur"
+            class = "pc_barren"
+            orbit_distance = 10
+            orbit_angle = 180
+            size = 6
+            has_ring = no
+
+        }
+    }
+
+    planet = {
+        name = "Phoebe"
+        class = "pc_gas_giant"
+        orbit_distance = 42
+        orbit_angle = 75
+        size = 30
+        has_ring = yes
+        init_effect = {
+        orbital_deposit_tile = {
+			clear_deposits = yes
+			add_deposit = d_enormous3_energy_deposit
+		}
+        }
+
+        moon = {
+            name = "Deimos"
+            class = "pc_barren"
+            orbit_distance = 20
+            orbit_angle = 180
+            size = 15
+            has_ring = no
+
+
+            init_effect = {
+            orbital_deposit_tile = {
+				clear_deposits = yes
+				add_deposit = d_neutronium_deposit
+			}
+            }
+
+        }
+    }
+
+    planet = {
+        name = "Zergal"
+        class = "pc_gas_giant"
+        orbit_distance = 58
+        orbit_angle = 53
+        size = 28
+        has_ring = yes
+
+        init_effect = {
+            orbital_deposit_tile = {
+		  	   clear_deposits = yes
+                add_deposit = d_enormous3_energy_deposit
+		      }
+        }
+
+        moon = {
+            name = "Tyrannis"
+            class = "pc_barren"
+            orbit_distance = 20
+            orbit_angle = 90
+            size = 13
+            has_ring = no
+
+            init_effect = {
+                orbital_deposit_tile = {
+			 	clear_deposits = yes
+			 	add_deposit = d_orillium_deposit
+                }
+            }
+
+        }
+    }
+}

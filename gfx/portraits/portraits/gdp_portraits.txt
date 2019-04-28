@@ -1,0 +1,96 @@
+portraits = {
+   beast_lord = {
+       texturefile = "gfx/models/portraits/beast_species/beast_lord.dds"
+   }
+   beast_species1 = {
+   		texturefile = "gfx/models/portraits/beast_species/beast_species1.dds"
+
+   }
+   beast_species2 = {
+   		texturefile = "gfx/models/portraits/beast_species/beast_species2.dds"
+   }
+   beast_species3 = {
+   		texturefile = "gfx/models/portraits/beast_species/beast_species3.dds"
+   }
+}
+
+portrait_groups = {
+	beast = {
+		default = beast_species1
+		game_setup = {
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					beast_lord
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					beast_lord
+				}
+			}
+		}
+		species = {
+			add = {
+				portraits = {
+					beast_lord
+				}
+			}
+		}
+
+		pop = {
+			add = {
+				portraits = {
+					beast_species1
+					beast_species2
+					beast_species3
+				}
+			}
+		}
+		leader = {
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					beast_species1
+					beast_species2
+					beast_species3
+				}
+			}
+			add = {
+				trigger = {
+					gender = female 
+				}
+				portraits = {
+					beast_species1
+					beast_species2
+					beast_species3
+				}
+			}
+		}
+		ruler = {
+			add = {
+				trigger = {
+					gender = male 
+				}
+				portraits = {
+					beast_lord
+				}
+			}
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					beast_lord
+				}
+			}
+		}
+	}
+}

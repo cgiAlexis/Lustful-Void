@@ -1,0 +1,194 @@
+
+namespace = beast_lord
+
+country_event = {
+	id = beast_lord.1
+	title = beast_lord.1.title
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+	desc = beast_lord.1.desc
+
+	option = { #make adm
+		name = beast_lord.1.a
+		trigger = {
+			NOT = {
+				has_country_flag = "beast_lord_admiral"
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				OR = {
+					has_trait = leader_beast_lord_gen
+					has_trait = leader_beast_lord_sci
+					has_trait = leader_beast_lord_gov
+				}
+				
+			}
+			kill_leader = {show_notification = no}
+		}
+		create_leader = {
+			name = "Beast Lord"
+			species = event_target:beast_species
+			type = admiral
+			skill = 10
+			set_age = 400
+			immortal = yes
+			traits = {
+				trait = leader_beast_lord_adm
+			}
+			event_leader = yes
+		}
+		last_created_leader = {
+			change_leader_portrait = beast_lord
+		}
+
+		set_country_flag = "beast_lord_admiral"
+		remove_country_flag = "beast_lord_general"
+		remove_country_flag = "beast_lord_governor"
+		remove_country_flag = "beast_lord_scientist"
+	}
+
+	option = { #make gen
+		name = beast_lord.1.b
+		trigger = {
+			NOT = {
+				has_country_flag = "beast_lord_general"
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				OR = {
+					has_trait = leader_beast_lord_adm
+					has_trait = leader_beast_lord_sci
+					has_trait = leader_beast_lord_gov
+				}
+			}
+			kill_leader = {show_notification = no}
+		}
+		create_leader = {
+			name = "Beast Lord"
+			species = event_target:beast_species
+			type = general
+			skill = 10
+			set_age = 400
+			immortal = yes
+			traits = {
+				trait = leader_beast_lord_gen
+			}
+			event_leader = yes
+		}
+		last_created_leader = {
+			change_leader_portrait = beast_lord
+		}
+		set_country_flag = "beast_lord_general"
+		remove_country_flag = "beast_lord_admiral"
+		remove_country_flag = "beast_lord_governor"
+		remove_country_flag = "beast_lord_scientist"
+
+	}
+
+	option = { #make gov
+		name = beast_lord.1.c
+		trigger = {
+			NOT = {
+				has_country_flag = "beast_lord_governor"
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				OR = {
+					has_trait = leader_beast_lord_gen
+					has_trait = leader_beast_lord_sci
+					has_trait = leader_beast_lord_adm
+				}
+			}
+			kill_leader = {show_notification = no}
+		}
+		create_leader = {
+			name = "Beast Lord"
+			species = event_target:beast_species
+			type = governor
+			skill = 10
+			set_age = 400
+			immortal = yes
+			traits = {
+				trait = leader_beast_lord_gov
+			}
+			event_leader = yes
+		}
+		last_created_leader = {
+			change_leader_portrait = beast_lord
+		}
+		set_country_flag = "beast_lord_governor"
+		remove_country_flag = "beast_lord_general"
+		remove_country_flag = "beast_lord_admiral"
+		remove_country_flag = "beast_lord_scientist"
+	}
+
+	option = { #make sci
+		name = beast_lord.1.d
+		trigger = {
+			NOT = {
+				has_country_flag = "beast_lord_scientist"
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				OR = {
+					has_trait = leader_beast_lord_gen
+					has_trait = leader_beast_lord_adm
+					has_trait = leader_beast_lord_gov
+				}
+			}
+			kill_leader = {show_notification = no}
+		}
+		create_leader = {
+			name = "Beast Lord"
+			species = event_target:beast_species
+			type = scientist
+			skill = 10
+			set_age = 400
+			immortal = yes
+			traits = {
+				trait = leader_beast_lord_sci
+			}
+			event_leader = yes
+		}
+		last_created_leader = {
+			change_leader_portrait = beast_lord
+		}
+		set_country_flag = "beast_lord_scientist"
+		remove_country_flag = "beast_lord_general"
+		remove_country_flag = "beast_lord_governor"
+		remove_country_flag = "beast_lord_admiral"
+
+	}
+
+	option = { #dont do anything
+		name = beast_lord.1.e
+		default_hide_option = yes
+	}
+}
+
+event = { #age counter
+	id = beast_lord.2
+	hide_window = yes
+
+	trigger = {
+		any_country = {
+			has_country_flag = "beast_lord"
+		}
+	}
+
+	immediate = {
+		change_variable = {
+			which = beast_lord_age
+			value = 1
+		}
+	}
+}

@@ -1,0 +1,12 @@
+on_custom_diplomacy = {
+	events = {
+		beastmenu.000
+	}
+}
+
+
+on_yearly_pulse = {
+	events = {
+		beast_lord.2
+	}
+}

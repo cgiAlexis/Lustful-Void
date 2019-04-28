@@ -1,0 +1,49 @@
+
+
+building_beast_arena = {
+	icon = beast_arena
+	base_buildtime = 1800
+
+	empire_unique = yes
+
+	produced_resources = {
+		unity = 10
+	}
+
+	cost = {
+		minerals = 750
+		energy = 600
+		influence = 50
+	}
+
+	planet_modifier = {
+		pop_happiness = 0.1
+	}
+	country_modifier = {
+		army_damage_mult = 0.05
+	}
+
+	potential = {
+		planet = {
+			owner = {
+				has_country_flag = "beast_arena"
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "requires_alien_pets"
+			tile = {
+				has_resource = {
+					type = sr_alien_pets
+					amount > 0
+				}
+			}
+		}
+	}
+
+	event_building = yes
+
+
+}

@@ -1,0 +1,14 @@
+
+country_edict = {
+	name = "Change Beast Lord Position"
+	cost = { influence = 1}
+	potential = { has_country_flag = "beast_lord"}
+
+	effect = {
+		country_event = { id = beast_lord.1 }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

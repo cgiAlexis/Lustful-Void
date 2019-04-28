@@ -1,0 +1,11 @@
+# Generated species derive their names from here
+
+beast = {
+	beast = {
+		name = Beast
+		plural = Beasts
+		home_planet = Alaria
+		home_system = Alar
+		name_list = "HUM1"
+	}	
+}

@@ -1,0 +1,5 @@
+﻿l_english:
+  beast_army:0 "Beast Army"
+  beast_army_desc:0 "A horde of wild beasts trained in fighting for our cause. But they are not easy to controll and once set free will destroy everything they see."
+  beast_troop_limit_tooltip:0 "Our cooperation with the beasts has enabled us to train them into military units, but due to the rarity of suitable subjects we will be only fielding a limited number of these Armies at a time."
+  beast_troop_limit_tooltip_fail:0 "We already have the maximum amount of armies we can field of this type."

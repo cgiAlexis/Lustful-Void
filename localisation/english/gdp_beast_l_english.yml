@@ -1,0 +1,129 @@
+﻿l_english:
+
+  beastmenu.001.c.opinion:0 "Requires the §YBeasts§! to have:\n£opinion  Opinion +50"
+  beastmenu.001.c.alreadyrecruited:0 "We already employ a Beast leader."
+  beastmenu.001.b.gender:0 "Requires a female leader."
+  beastmenu.001.b.recentgift:0 "We just recently sent a leader."
+
+  beast_start.10.title:0 "Civilian ship attacked!"
+  beast_start.10.desc:0 "Earlier today one of our civilian ships was attacked by previously unknown entities. The attackers who boarded the vessel were apparently vaguely similar in anatomical structure to our own race, but described by survivors as monstrous. Much of the female crew was subjected to violent rapes at the hands of these entities, which apparently remained in control of the ship for several hours, somehow maintaining a communications blackout./n /nOur scientists have analyzed what was previously believed to be comms interference in the region, which we now believe may actually be a method of communication in use by these entities. With sufficient effort, they believe it would be possible to attempt communication with them, assuming they do indeed have a form of language. Alternatively, we could trace the signals to their origin and launch a reprisal strike, perhaps catching them by surprise."
+  beast_start.20.title:0 "Communication with the attackers."
+  beast_start.20.desc:0 "You have contacted me, what do you want?"
+  beast_start.11.title:0 "Attackers vanish in space!"
+  beast_start.11.desc:0 "As soon as our ships closed in on the enemy the started their engines and vanished into space."
+
+
+  beast_start.10.a:0 "Eastablish communications with them!"
+  beast_start.10.b:0 "Let's attack them!"
+  beast_start.11.a:0 "We will never see them again!"
+
+  beast_start.20.a:0 "Who are you?"
+  beast_start.20.b:0 "What do you want?"
+  beast_start.20.c:0 "What can you give us?"
+  beast_start.20.d:0 "Very well!"
+
+  beast_start.a.reply:0 "I am the lord of beasts. I am one of the most powerful beings in this galaxy, and control all beasts."
+  beast_start.b.reply:0 "The only thing I desire is to make my subjects happy. You can help me by either giving me some of your population or even send me one of your brightest leaders. Of course, if you were to do something like this, I would grant you something in return."
+  beast_start.c.reply:0 "I am not only one of the most powerful but also one of the wisest being you will ever find. If you help me I'll assist you in your research, and maybe if you have proven worthy will grant you access to much power."
+
+  beastmenu.001.title:0 "Beast Lord"
+  beastmenu.001.desc:0 "What do you want?"
+  beastmenu.002.desc:0 "I will gladly accept your donation your specimen will be in great company. My People will take great care of them."
+  beastmenu.003.desc:0 "I truly admire you resolve, to give me one of your most brightest. I will make sure that she will be treated fitting to her significance to not only your but also my species."
+  beastmenu.004.desc:0 "I would gladly send you one of my leaders. In wich field should he be specialized."
+
+  beastmenu.001.a:0 "We will send you some of our population."
+  beastmenu.001.b:0 "We will send you one of our most brightest."
+  beastmenu.001.c:0 "Could we recruit one of your leaders?"
+  beastmenu.001.d:0 "We actually don't want anything."
+
+  beastmenu.002.a:0 "We will give you some of our species, you'd better be happy."
+  beastmenu.002.b:0 "We will send only some filthy xenos."
+  beastmenu.002.c:0 "Their sacrifice will bring our species closer together."
+  beastmenu.002.d:0 "We changed our mind!"
+  beastmenu.003.a:0 "She truly was on of our brightest."
+  beastmenu.004.a:0 "We need a general."
+  beastmenu.004.b:0 "We need a admiral."
+  beastmenu.004.c:0 "We need a scientist."
+
+  gdp_communications:0 "Communicate with Attackers."
+  gdp_communications_DESC:0 "We must divert some of our resources to initiate communications with the strange attackers."
+
+  gifted_pop:0 "Gifted Pop"
+  gifted_leader:0 "Gifted Leader"
+
+
+  beastreward.001.title:0 "A Message from the beasts!"
+  beastreward.002.title:0 "A Message from the beasts!"
+  beastreward.003.title:0 "A Message from the beasts!"
+  beastreward.004.title:0 "A Message from the beasts!"
+  beastreward.005.title:0 "A Message from the beasts!"
+
+  beastreward.001.desc:0 "Our people have grown more closer of the last time. Because of this, I have decided to grant you access to a technology wich will even more deepen our ties."
+  beastreward.002.desc:0 "We have grown even closer and our species are now friends. Becuase of this I will grant you a building wich may help to deepen our ties even more."
+  beastreward.003.desc:0 "We are now true friends. My soldiers asked me if they would be allowed to fight in your army and I will not stop them. From now on you will be able to recruit beast armies."
+  beastreward.004.desc:0 "We are like brothers and sisters now and I will offer you my own services in whatever position you like."
+  beastreward.005.desc:0 "We are like true family now, because of this I will show you the path to the old and ancient hideout of my people. Sadly it is deserted, but we hope, that you will be able to bring it to new life."
+
+  beastreward.001.a:0 "We thank you very much."
+  beastreward.002.a:0 "This building will deepen our ties."
+  beastreward.003.a:0 "Your soldiers will be put to good use."
+  beastreward.004.a:0 "We humbly accept your services."
+  beastreward.005.a:0 "We will recolonize this system in your name."
+
+  beast_lord.1.title:0 "The beast lords position."
+  beast_lord.1.desc:0 "The beast lord can work in every field we want him to. We only need to tell him."
+
+  beast_lord.1.a:0 "We need an admiral!"
+  beast_lord.1.b:0 "We need a general!"
+  beast_lord.1.c:0 "We need a governor!"
+  beast_lord.1.d:0 "We need a scientist!"
+  beast_lord.1.e:0 "She should stay where she is!"
+
+  beast_start.20.e:0 "Are you a god?"
+  beast_start.20.f:0 "Can you show us your technologies?"
+  beast_start.20.g:0 "You attacked our people xeno scum!"
+  beast_start.20.h:0 "We would truly like to cooperate!"
+  beast_start.20.i:0 "Help us destroy our enemies!"
+  beast_start.20.j:0 "I hope we can live in peace!"
+
+  beast_start.20.e.reply:0 "No I am no god, but I am very powerful and immortal and able to destroy those who anger me. But you don't have to fear me, at least for now"
+  beast_start.20.f.reply:0 "I posses great wisdom, and I might be willing to share the knowledge of me and my species. But only with those who have proven, that they are my true friends."
+  beast_start.20.g.reply:0 "We whole heartedly appology. We surely didn't want to anger you, and hope, that this wont put a strain on our future relationship."
+  beast_start.20.h.reply:0 "We as well are very interested in interspecies cooperation. My true goal is that my species will flourish and is safe."
+  beast_start.20.i.reply:0 "If you desire the capability to destroy your enemies we can help you with that, but only if you cooperate with us. And the relationship between our species is good enough."
+  beast_start.20.j.reply:0 "In our interest as well is only peace. We hope that we can peacefully coexist and cooperate."
+
+  beastarena.1.title:0 "Beast Arena"
+  beastarena.1.desc:0 "Today is the day of the start of a series of great festivities in the beast arena. The festivities are planed to last multiple days and bring both our species and the beasts closer together. /n /n On the first day the beast swarmed out all over the planet to find a fitting subject for the show that would later be held at the beast arena."
+  beastarena.2.desc:0 "On the second day of the festivities, the subject from yesterday is brought to the beast arena, stripped naked and prepared for the following event."
+  beastarena.3.desc:0 "On the third day the subject is brought before the our empires most influental leaders. All of them now proceed with using the subject to their hearts desire. Over the course of the day the subject is fucked by most members of the general staff, the admirality, the heads of science and our administrative leaders. Even our governours participate in the event."
+  beastarena.4.desc:0 "On the fourth day the subject is given to the beasts. The subject is brought into the arena and after this the beasts a let inside. The first ones to use the subject and entertain the crowd, are the smallest ones. They gather around the subject, and take her from all sides. For nearly the complete day the subject is fucked by a truly staggering amount of beasts."
+  beastarena.5.desc:0 "On the fifth day of the festivities the subject is again used by the beasts. This time some of the larger specimen got their turn. The subject was again the whole day violently raped. The large arena, full of people watching the spectacle, was filled with the screams of the subject, and the roars of the beasts."
+  beastarena.6.desc:0 "On the sixth day even larger beasts forced themselfes on the poor subjects. They forced their giant genitals into the subject. The crowd loudly cheered on the beast. The festivities were closing its peak."
+  beastarena.7.desc:0 "On the seventh day was the large finale. The until now largest beast entered the arena while the subject lay naked on the floor. The crowd was larger than ever. From all over the empire the people came just to witness the spectacle that was about to take place. The giant beast mounted the subject and forced itself inside. The spectacle lasted multiple hours. Finally the beast had and enough retreated from the subject."
+  beastarena.8.desc:0 "At the end of the festivities the subject lay in the sand of the great beast arena. The subjects mind and body broken by the beasts that ravaged her body for an entire week. Her sacrifice will never be forgotten. Because of her our species the beasts and us are now even closer together than ever. And she did put on quite a show."
+
+  beastarena_more:0 "Show me more!"
+  beastarena_enough:0 "Enough of this!"
+
+  beastarena.8.a:0 "An amazing show!"
+
+  beastrandom.1.title:0 "Beast relationships"
+  beastrandom.2.title:0 "Beast Prostitution"
+  beastrandom.3.title:0 "Beast Pets"
+
+  beastrandom.1.desc:0 "Because of our good diplomatic relations with the beasts more and more of our population seem to involve themselfes in romantic relationships with the beasts."
+  beastrandom.2.desc:0 "Since more and more beasts decided to life with our people, there has been a concerning development. It seems like many beasts have started to prostitute themselfes to make a living."
+  beastrandom.3.desc:0 "There has been a interesting trend recently. Many of our population, and especially, the more wealthy ones have started to hold beasts as pets. They feed them, 'play' with them and even buy funny accesoires for them. Not ony that, multiple beasts schools weere founded all over our empire to teach the beasts little tricks."
+
+  beastrandom.1.a:0 "How Interesting!"
+  beastrandom.1.b:0 "We have to support this!"
+  beastrandom.1.c:0 "We have to ban this!"
+
+  beastrandom.2.a:0 "Very interesting."
+  beastrandom.2.b:0 "Good chance, for an extra tax!"
+  
+  beastrandom.3.a:0 "How Interesting!"
+  beastrandom.3.b:0 "The place of slaves is their rightfull place."
+  beastrandom.3.c:0 "We have to make sure, that they still have the same rights as everyone else!"

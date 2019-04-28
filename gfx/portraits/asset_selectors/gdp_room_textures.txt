@@ -1,0 +1,29 @@
+room_selector = {
+	#default = "d_room"	#point to textures that end with "_room.dds" but remove the file ending
+
+	#default = "default_room"	#point to textures that end with "_room.dds" but remove the file ending
+
+	#will run with a limited country scope. species and government is set but the country does not actually exist
+	
+	game_setup = {	
+	
+	}
+
+	#leader scope
+	ruler = {
+		"start_event_room" = {}
+		"beast_lord_room" = {}
+		"leader_sacrifice_room" = {}
+		"pop_sacrifice_room" = {}
+		"leader_recruiting_room" = {}
+		"beastarena1_room" = {}
+		"beastarena2_room" = {}
+		"beastarena3_room" = {}
+		"beastarena4_room" = {}
+		"beastarena5_room" = {}
+		"beastarena6_room" = {}
+		"beastarena7_room" = {}
+		"beastarena8_room" = {}
+
+	}
+}

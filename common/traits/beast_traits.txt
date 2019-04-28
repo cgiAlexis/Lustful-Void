@@ -1,0 +1,62 @@
+leader_beast_adm = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_trickster.dds"
+	modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_weapon_range_mult = 0.05
+	}
+
+
+	leader_trait = yes
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+leader_beast_gen = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_charismatic.dds"
+	modifier = {
+		army_morale = 0.10
+		army_damage_mult = 0.10
+	}
+
+	leader_trait = yes
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+leader_beast_gov = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_army_veteran.dds"
+	modifier = {
+		planet_building_cost_mult = -0.15
+		army_defense_damage_mult = 0.2
+	}
+
+
+	leader_trait = yes
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+leader_beast_sci = {
+	cost = 1
+	modification = no
+	icon = "gfx/interface/icons/traits/leader_traits/leader_trait_spark_of_genius.dds"
+	modifier = {
+		all_technology_research_speed = 0.10
+	}
+	leader_trait = yes
+	leader_class = { scientist }
+	# increased chance to discover rare techs (weighted in tech-script)
+	
+	initial = no
+	randomized = no
+
+}

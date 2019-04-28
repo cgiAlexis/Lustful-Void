@@ -1,0 +1,205 @@
+#Rewards got by increasing beasts opinion
+#
+#15 opinion: unique tech, unity buff, army damage
+#
+#40 opinion: empire unique buidling beast arena
+#
+#70 opinion: unique unit beast troops, high collateral damage, may leave beast pops on other planets 
+#
+#90 opinion: beast lord joins your empire immortal rank 10 leader, area may be changed through edicts
+#
+#100 opinion: unique star system revealed, 2 Gaia Worlds with fallen empire buildings
+#
+# each may only fire once
+
+namespace = beastreward
+
+country_event = { #15 opinion reward
+	id = beastreward.001
+	title = beastreward.001.title
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+	
+	desc = beastreward.001.desc
+	fire_only_once = yes
+
+
+	trigger = {
+		has_global_flag = has_beast_enclave
+		event_target:beast_lord = {#trust check
+			trust = { 
+				who = root
+				value > 14 
+			}
+		}
+	}
+
+	option = {
+		name = beastreward.001.a
+		#add tech option
+		add_research_option = tech_beast_friendship
+	}
+}
+
+country_event = { #40 opinion reward
+	id = beastreward.002
+	title = beastreward.002.title
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+
+	desc = beastreward.002.desc
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = has_beast_enclave
+		event_target:beast_lord = {#trust check
+			trust = { 
+				who = root
+				value > 39 
+			}
+		}
+	}
+
+	option = {
+		name = beastreward.002.a
+		#add empire unique building
+		set_country_flag = "beast_arena"
+	}
+}
+
+country_event = { #70 opinion reward
+	id = beastreward.003
+	title = beastreward.003.title
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+	desc = beastreward.003.desc
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = has_beast_enclave
+		event_target:beast_lord = {#trust check
+			trust = { 
+				who = root
+				value > 69
+			}
+		}
+	}
+
+	option = {
+		name = beastreward.003.a
+		#add unique unit
+		set_country_flag = "beast_armies"
+		hidden_effect = {
+			set_variable = {
+				which = "beast_soldier_count" 
+				value = 0
+			}
+		}
+		
+	}
+}
+
+country_event = { #90 opinion reward
+	id = beastreward.004
+	title = beastreward.004.title
+	is_triggered_only = yes
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+	desc = beastreward.004.desc
+	fire_only_once = yes
+
+	trigger = {
+		has_global_flag = has_beast_enclave
+		event_target:beast_lord = {#trust check
+			trust = { 
+				who = root
+				value > 89
+			}
+		}
+	}
+
+
+	option = {
+		name = beastreward.004.a
+		#add new leader
+		hidden_effect = {
+			create_leader = {
+				name = "Beast Lord"
+				species = event_target:beast_species
+				type = admiral
+				skill = 10
+				set_age = 400
+				immortal = yes
+				traits = {
+					trait = leader_beast_lord_adm
+				}
+				event_leader = yes
+			}
+			last_created_leader = {
+				change_leader_portrait = beast_lord
+			}
+			set_variable = {
+				which = beast_lord_age
+				value = 400
+			}
+			set_country_flag = "beast_lord"
+			set_country_flag = "beast_lord_admiral"
+		}
+	}
+}
+
+country_event = { #100 opinion reward
+	id = beastreward.005
+	title = beastreward.005.title
+	diplomatic = yes
+	custom_gui = "enclave_trader_window"
+	custom_gui_option = "enclave_trader_option"
+	picture_event_data = {
+		room = beast_lord_room
+	} 
+	desc = beastreward.005.desc
+	fire_only_once = yes
+	mean_time_to_happen = {
+		years = 150
+	}
+
+	trigger = {
+		has_country_flag = "beast_max_relations"
+	}
+
+	option = {
+		name = beastreward.005.a
+		#add powerful star system
+
+		random_system_within_border = {
+			spawn_system = {
+				min_distance = 20
+				max_distance = 50
+				initializer = "beast_lair"
+				hyperlane = yes
+				is_discovered = yes
+			}
+		}
+
+	}
+}
+

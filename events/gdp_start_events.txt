@@ -1,0 +1,271 @@
+namespace = beast_start
+
+#first event, give special project
+country_event = {
+	id = beast_start.10
+	fire_only_once = yes
+	diplomatic = yes
+
+	trigger = {
+		NOT = { has_global_flag = "has_beast_enclave"}
+		is_ai = no
+	}
+	title = "beast_start.10.title"
+	desc = "beast_start.10.desc"
+	picture_event_data = {
+		room = start_event_room
+	}
+
+	show_sound = event_swarm_started
+
+	mean_time_to_happen = { #happens after 5 years
+		years = 5
+	}
+
+	option = { #triggers special prject
+		name = beast_start.10.a
+		enable_special_project = {name = gdp_communications location = ROOT.capital_scope owner = ROOT}
+
+	}
+
+	option = { #stops event chain
+		name = beast_start.10.b
+		country_event = { id = beast_start.11 }
+	}
+}
+
+country_event = {
+	id = beast_start.11
+	title = "beast_start.11.title"
+	desc = "beast_start.11.desc"
+	is_triggered_only = yes
+	show_sound = event_radio_chatter
+	diplomatic = yes
+	picture_event_data = {
+		room = start_event_room
+	}
+
+	option = { #stops event chain
+		name = beast_start.11.a
+	}
+}
+
+#triggered by completing speical project, spawns beast enclave station
+country_event = {
+	id = beast_start.20
+	title = "beast_start.20.title"
+	desc = "beast_start.20.desc"
+	is_triggered_only = yes
+	show_sound = event_radio_chatter
+	diplomatic = yes
+	picture_event_data = {
+		room = beast_lord_room
+	}
+
+
+	immediate = {
+		establish_communications_no_message = FROMFROM
+
+		capital_scope = {
+			save_event_target_as = capital_planet
+			solar_system = { save_event_target_as = capital_system }
+		}
+		create_species = {
+				name = "Beast"
+				plural = "Beasts"
+				class = beast
+				portrait = beast
+				immortal = yes
+				traits = {
+					trait = trait_pc_continental_preference
+					trait = trait_thrifty
+					trait = trait_extremely_adaptive
+				}
+		}
+
+		last_created_species = {
+			save_global_event_target_as = beast_species
+		}
+
+		create_country = {
+			name = "Beast Lord"
+			type = beast_enclave
+			authority = "auth_dictatorial"
+			civics = {
+				civic = civic_space_beasts
+			}
+			species = last_created
+			flag = {
+				icon = {
+					category = "enclaves"
+					file = "enclaves_flag_beasts.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"red"
+					"dark_green"
+					"null"
+					"null"
+				}
+			}
+			ethos = {
+				ethic = ethic_fanatic_xenophile
+				ethic = ethic_authoritarian
+			}
+			ignore_initial_colony_error = yes
+		}	
+		last_created_country = {
+			set_graphical_culture = fallen_empire_01
+			create_fleet = {
+				name = "Beast Base"
+				effect = {
+					set_owner = prev
+					create_ship = {
+						name = random
+						design = "NAME_Curator_Enclave_Station"
+						graphical_culture = fallen_empire_01
+					}
+					set_location = {
+						target = event_target:capital_planet
+						distance = 50
+						angle = random
+					}
+					save_event_target_as = CustomCapital
+					prev = {
+						set_custom_capital_location = event_target:CustomCapital
+					}
+				}
+			}
+
+			create_leader = {
+				type = admiral
+				species = PREV
+				age = 400
+				name = "Beast Lord"
+				skill = 5
+			}
+			last_created_leader = {
+				change_leader_portrait = beast_lord
+			}
+			
+			set_leader = last_created_leader
+			save_event_target_as = BeastLord
+			save_global_event_target_as = beast_lord
+		} 
+		establish_communications_no_message = event_target:BeastLord
+
+		set_global_flag = has_beast_enclave
+	}
+
+	option = { #who are you?
+		name = beast_start.20.a
+		is_dialog_only = yes
+		response_text = beast_start.a.reply
+	}
+
+	option = { #spiritualist are you a god?
+		name = beast_start.20.e
+		is_dialog_only = yes
+		response_text = beast_start.e.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
+				}
+			}
+		}
+	}
+
+	option = { #materialist can you show us your technologies
+		name = beast_start.20.f
+		is_dialog_only = yes
+		response_text = beast_start.f.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_materialist
+					has_ethic = ethic_fanatic_materialist
+				}
+			}
+		}
+	}
+
+	option = { #xenophobe
+		name = beast_start.20.g
+		is_dialog_only = yes
+		response_text = beast_start.g.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
+			}
+		}
+	}
+
+	option = { #xenophile
+		name = beast_start.20.h
+		is_dialog_only = yes
+		response_text = beast_start.h.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_xenophile
+					has_ethic = ethic_fanatic_xenophile
+				}
+			}
+		}
+	}
+
+	option = { #militarist
+		name = beast_start.20.i
+		is_dialog_only = yes
+		response_text = beast_start.i.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_militarist
+				}
+			}
+		}
+	}
+
+	option = { #pacifist
+		name = beast_start.20.j
+		is_dialog_only = yes
+		response_text = beast_start.j.reply
+		trigger = {
+			root = {
+				OR = {
+					has_ethic = ethic_pacifist
+					has_ethic = ethic_fanatic_pacifist
+				}
+			}
+		}
+	}
+
+	#option = { #what do you want?
+	#	name = beast_start.20.b
+	#	is_dialog_only = yes
+	#	response_text = beast_start.b.reply
+	#}
+
+	option = { #what can you give us?
+		name = beast_start.20.c
+		is_dialog_only = yes
+		response_text = beast_start.c.reply
+	}
+
+	option = { #very well
+		name = beast_start.20.d
+		default_hide_option = yes
+	}
+}
+
+

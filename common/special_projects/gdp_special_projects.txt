@@ -1,0 +1,24 @@
+special_project = {
+	key = gdp_communications
+	picture = dimensional_horror
+	icon = situation_log_radar
+	cost = 60
+	tech_department = society_technology
+	timelimit = -1
+
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	abort_trigger = {
+	}
+
+	on_success = {
+		owner = {
+			country_event = { id = beast_start.20 days = 2}
+		}
+	}
+	on_fail = {}
+}
