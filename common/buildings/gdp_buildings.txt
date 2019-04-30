@@ -1,5 +1,37 @@
+##Farm for housing and growing Beasts
+building_beast_farm = {
+	icon = 		##Pick an icon
+	base_buildtime = 180
+
+	empire_unique = yes
+
+	produced_resources = {
+		unity = 10
+		sr_beast_pets = 10
+	}
+
+	cost = {
+		minerals = 750
+		energy = 600
+		influence = 25
+	}
+
+	planet_modifier = {
+		pop_happiness = 0.2
+	}
+	
+	potential = {
+		planet = {
+			owner = {
+				has_country_flag = "beast_arena"
+			}
+		}
+	}
+	event_building = yes
+}
 
 
+## Training arena for weaponising Beasts
 building_beast_arena = {
 	icon = beast_arena
 	base_buildtime = 1800
@@ -33,17 +65,14 @@ building_beast_arena = {
 
 	allow = {
 		custom_tooltip = {
-			fail_text = "requires_alien_pets"
+			fail_text = "Requires Beast pets"
 			tile = {
 				has_resource = {
-					type = sr_alien_pets
+					type = sr_beast_pet
 					amount > 0
 				}
 			}
 		}
 	}
-
 	event_building = yes
-
-
 }
