@@ -1,0 +1,17 @@
+##Beast mod resource only##
+
+#Beast pets
+sr_beast_pets = {
+	tradeable = yes
+	max = 5000
+	
+	deficit_modifier = beast_pet_deficit #Make me in static modifiers
+	
+	ai_weight = {
+		weight = 0.5
+	}
+	
+	ai_wants = {
+		base = 100
+	}
+}
